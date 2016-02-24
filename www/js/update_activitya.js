@@ -53,6 +53,11 @@ $(document).off('click', '#signoutinsy').on('click', '#signoutinsy', function() 
   return false;
 });
 
+$(document).off('click', '#before_new_listupa').on('click', '#before_new_listupa', function() {
+  $.mobile.changePage($('#pagedesign'), { transition: "none", changeHash: true, reverse: false });
+  return false;
+});
+
 $(document).off('click', '#inprobj').on('click', '#inprobj', function() {
 $.mobile.changePage($('#pagedesign'), { transition: "none", changeHash: true, reverse: false });
 return false;
@@ -243,11 +248,8 @@ $('#chatr').append(chatr);
 }
 
 
-$(document).off('click', '#before_new_listupa').on('click', '#before_new_listupa', function() {
-//alert(region_num+'refresh');
-//$.ajax({url: 'http://staging.eimpressive.com/slim-four/dashinprogress.php?region='+region+"&user_id="+user_id,
-//alert(region);
-//alert(user_id);
+/*$(document).off('click', '#before_new_listupa').on('click', '#before_new_listupa', function() {
+
 $.ajax({url: 'http://staging.eimpressive.com/slim-four/count.php?region='+region+"&user_id="+user_id,
   data:$('#new').serialize(),
   type: 'post',                   
@@ -287,7 +289,7 @@ alert('Network error has occurred please try again!');
 });
 
 });
-
+*/
 
 function onSuccess(data, status)
 {
