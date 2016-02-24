@@ -91,6 +91,7 @@ function assignValues(){
   regionArray_array =  JSON.parse(sessionStorage.getItem("regionArray"));
   var region=regionArray_array.region;
   var user_id=regionArray_array.user_id;
+  var state=regionArray_array.state;
 //alert(region_num);
 username=regionArray_array.username;
 //alert(username);
@@ -501,9 +502,9 @@ document.getElementById('remarkg').value = "";
   //$("input[type='radio']:first").attr("checked", "checked");
 //alert(region);
 //alert(user_id);
+alert('Verification Record Submitted Successfully');
 
-//alert('count');
-$.ajax({url: 'http://staging.eimpressive.com/slim-four/count.php?region='+region+"&user_id="+user_id,
+$.ajax({url: 'http://staging.eimpressive.com/slim-four/count.php?region='+region+"&user_id="+user_id+"&state="+state,
   data:$('#update_to_inprogressw').serialize(),
   type: 'post',                   
   async: 'true',
