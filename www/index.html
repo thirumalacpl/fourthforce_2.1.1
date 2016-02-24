@@ -223,7 +223,30 @@ function onVolumeUpKeyDown()
 alert("Volume Up button pressed");
 }
 </script>
+<script type="text/javascript">
+	//handle Back button
+function onDeviceReady() {
+    // Register the event listener
+    document.addEventListener("backbutton", onBackKeyDown, false);
+    console.log('Device ready - register onBackKeyDown()');                
+}
 
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onBackKeyDown() {
+    var active_page = $( ":mobile-pagecontainer" ).pagecontainer( "getActivePage" );
+    var id =active_page.page().attr('id');
+    if (id==='pageone') {
+        if (confirm('Do you want to exit the app? If not, use the top left button to go to Previous Page?')==true){
+            navigator.app.exitApp();
+        }
+    }
+    else{
+    navigator.app.backHistory();
+    }
+}
+//**
+</script>
 	</head>
 	<body style="padding:0; margin:0;" onload="onLoad()">
    <!-- <body onload="onLoad()"> -->
