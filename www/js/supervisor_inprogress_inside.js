@@ -2,6 +2,8 @@ $(document).on('pageshow', '#pagedesign', function(){
 //alert('supervisor_inprogress_inside');
 $('.iGallery').imageflip()
 
+
+
 $('.sddq').empty();
 $('#sda_newin').empty();
 $('#lii_newin').empty();
@@ -148,6 +150,8 @@ if(region_array == null){
  $.mobile.changePage($('#pageone'), { transition: "none", changeHash: true, reverse: false });
   return false;
 }
+
+document.getElementById('filterBasic-input').value = "";
 
 var coordinator_id = user_obja.qualification_id;
  //alert(coordinator_id+'qualification_idcoordinator_id');

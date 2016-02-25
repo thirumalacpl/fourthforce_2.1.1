@@ -147,6 +147,8 @@ if(regionArray_array == null){
   return false;
 }
 
+document.getElementById('filterBasic-inputcompleted').value = ""
+
 var qualification_id = user_obja.type;
 //alert(qualification_id+'qqqqqqqqqq');
 //alert(user_obja.type+'type');

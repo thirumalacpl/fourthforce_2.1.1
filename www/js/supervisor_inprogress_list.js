@@ -100,6 +100,10 @@ if(inpro_veri == null){
   return false;
 }
 
+document.getElementById('filterBasic-inputveri').value = "";
+document.getElementById('filterBasic-inputcompleted').value = "";
+document.getElementById('filterBasic-inputlistnot').value = "";
+
 //alert('if inside');
 for(a=0;a<inprogressArray_array.length;a++){
 

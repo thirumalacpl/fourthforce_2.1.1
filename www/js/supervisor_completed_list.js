@@ -95,7 +95,10 @@ if(regionArray_array == null){
   return false;
 }
 
-
+document.getElementById('filterBasic-input').value = "";
+document.getElementById('filterBasic-inputveri').value = "";
+/*document.getElementById('filterBasic-inputcompleted').value = "";*/
+document.getElementById('filterBasic-inputlistnot').value = "";
 
 username=regionArray_array.username;
 //alert(username);

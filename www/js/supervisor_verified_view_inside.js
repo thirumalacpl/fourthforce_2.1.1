@@ -195,6 +195,8 @@ if(fin !== null){
 $('#final_comment').text(supervisor_final_commanda.final_Command);
 }
 
+document.getElementById('filterBasic-inputveri').value = ""
+
 var qualification_id = user_obja.type;
 //alert(qualification_id+'qqqqqqqqqq');
 //alert(user_obja.type+'type');

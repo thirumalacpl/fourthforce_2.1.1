@@ -147,6 +147,8 @@ if(regionArray_array == null){
   return false;
 }
 
+document.getElementById('filterBasic-inputlistnot').value = ""
+
 username=regionArray_array.username;
 //alert(username);
 $("#userlistinverinot").text(username);

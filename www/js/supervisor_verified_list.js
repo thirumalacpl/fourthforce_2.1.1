@@ -100,7 +100,10 @@ if(superempty == ""){
   $.mobile.changePage($('#dashboard'), { transition: "none", changeHash: true, reverse: false });
 }
 
-
+document.getElementById('filterBasic-input').value = "";
+/*document.getElementById('filterBasic-inputveri').value = "";*/
+document.getElementById('filterBasic-inputcompleted').value = "";
+document.getElementById('filterBasic-inputlistnot').value = "";
 
 for(a=0;a<sup_verified_array.length;a++){
   superr_objj = sup_verified_array[a];
