@@ -3,6 +3,7 @@ $(document).on('pageshow', '#pagedesign', function(){
 $('.iGallery').imageflip()
 
 
+$('.sqw').empty();
 
 $('.sddq').empty();
 $('#sda_newin').empty();
@@ -143,6 +144,7 @@ integrity_lifestyle_pera = JSON.parse(sessionStorage.getItem("integrity_lifestyl
 servant_educa = JSON.parse(sessionStorage.getItem("servant_educa"));
 
 reject_repa = JSON.parse(sessionStorage.getItem("reject_repa"));
+coordinator_final_comment_array = JSON.parse(sessionStorage.getItem("coordinator_final_comment_array"));
 
 
 if(region_array == null){
@@ -176,19 +178,39 @@ username=regionArray_array.username;
 $("#userlistinso").text(username);
 
 
+//alert(reject_repa);
+for(a=0;a<coordinator_final_comment_array.length;a++){
+
+  reject_repaa = coordinator_final_comment_array[a];
+
+var verificationid=reject_repaa.verification_id;
+  var typ=reject_repaa.type;
+  //alert(reject_repaa);
+if(verificationid == verification_user_id && qualification_id == typ ){
+var oneempqa=reject_repaa.comment;
+
+//alert(oneempqa+'oneempqa');
+ $('.reportr').show();
+  $('.sqw').append('<li>'+oneempqa+'</li>');
+}
+
+  }
 
 if(reject_repa !== null){
+
   var verificationid=reject_repa.verification_id;
   var typ=reject_repa.type;
-if(verificationid == verification_user_id && qualification_id == typ ){
-  //alert('show');
+/*if(verificationid == verification_user_id && qualification_id == typ ){
+  alert('show');
 
   $('.reportr').show();
 
 $('.hhh').html('<img src="images/primary/not.png" alt="" >State Head Rejected Report');
 $('.ppp').text(reject_repa.comment);
 
-}
+}*/
+
+
 
 }
 
