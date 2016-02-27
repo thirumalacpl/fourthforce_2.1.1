@@ -179,6 +179,7 @@ $("#userlistinso").text(username);
 
 
 //alert(reject_repa);
+if(reject_repa !== null){
 for(a=0;a<coordinator_final_comment_array.length;a++){
 
   reject_repaa = coordinator_final_comment_array[a];
@@ -195,6 +196,7 @@ var oneempqa=reject_repaa.comment;
 }
 
   }
+}
 
 if(reject_repa !== null){
 

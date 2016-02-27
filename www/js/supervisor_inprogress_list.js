@@ -534,7 +534,7 @@ gj =super_inpro_obj.verification_user_id;
 //alert(hj+'gg'+gj+''+huemploy+'qualification_id'+qualification_id);
 if( hj == gj && huemploy == qualification_id){
   reject_repa = coordinator_final_comment_array[a];
-//alert(reject_repa.verification_id+'reject_repa'+gj);
+alert(reject_repa.verification_id+'reject_repa'+gj);
 }
 }
 }
