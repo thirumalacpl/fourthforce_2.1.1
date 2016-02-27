@@ -272,25 +272,32 @@ reader.onload = function() {
 var dataURL = reader.result;
 //save the file to the server
 var req = Ajax("http://staging.eimpressive.com/watchguardlive/savepng.php", "POST", "file=" + ofName + "&content=" + dataURL);
-if (req.status == 204) {
-  alert('204');
-}
+
 if (req.status == 200) {
 // return the full path of the saved file
 alert('200');
 fName = req.responseText;
-alert(fName+'fname');
+
 $('#pgAddBookImagePreview').attr('src', dataURL);
 //show a toast message that the file has been uploaded
+$.mobile.loading("show", {
+text: "Loading file...",
+textVisible: true
+});
 alert('file has been uploaded');
 //toastr.success(ofName + ' file uploaded.', 'Library');
+$.mobile.loading("hide");
 }else {
 // return a blank file name
 fName = req.responseText;
-alert(fName+'fname not been upload');
+$.mobile.loading("show", {
+text: "Loading file...",
+textVisible: true
+});
 //show a toast message that the file has not been uploaded
 alert('show a toast message that the file has not been uploaded');
 //toastr.error(ofName + ' file NOT uploaded.', 'Library');
+$.mobile.loading("hide");
 }
 //set the file name to store later
 $('#pgAddBookBookImage').data('file', fName);
