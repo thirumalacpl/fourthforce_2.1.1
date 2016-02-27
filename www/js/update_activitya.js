@@ -248,49 +248,69 @@ $('#chatr').append(chatr);
 
 }
 
+//upload a file to server once onchange is detected
+$('#pgAddBookBookImage').on('change', function () {
+/*$.mobile.loading("show", {
+text: "Loading file...",
+textVisible: true
+});*/
+//check to see if we have a file
+var fName = document.getElementById('pgAddBookBookImage').files[0];
 
-/*$(document).off('click', '#before_new_listupa').on('click', '#before_new_listupa', function() {
+if (typeof (fName) === 'undefined') fName = '';
 
-$.ajax({url: 'http://staging.eimpressive.com/slim-four/count.php?region='+region+"&user_id="+user_id,
-  data:$('#new').serialize(),
-  type: 'post',                   
-  async: 'true',
-  crossDomain: true,
-  dataType: 'json',
-  beforeSend: function() {
-  },
-  complete: function() {
-  },
-  success: function (result) {
-    console.log('searchlpa ' +result);
-    if(result[0]){
-      $("#popupsearchmade").popup("open");
-
-sessionStorage.setItem("supervisor_inprogress_count_array",JSON.stringify(result[0]));
-      sessionStorage.setItem("supervisor_verified_count_array",JSON.stringify(result[1]));
-       sessionStorage.setItem("supervisor_completed_count_array",JSON.stringify(result[2]));
- sessionStorage.setItem("supervisor_not_verified_count_array",JSON.stringify(result[3]));
-
-
-$.mobile.loading().hide();
-$.mobile.changePage($('#pagedesign'), { transition: "none", changeHash: true, reverse: false });
-}else {
-  alert('No Data Found for the search record'); 
+//get the file name
+var ofName = fName.name;
+//get the file extension
+alert(ofName+'fname');
+//var ofExt = Mid(ofName, InStrRev(ofName, '.'));
+// open a file reader to upload the file to the server
+var reader = new FileReader();
+// once the file reader has loaded the file contents
+reader.onload = function() {
+// get the dataURL of the file, a base 64 decoded string
+var dataURL = reader.result;
+//save the file to the server
+var req = Ajax("http://staging.eimpressive.com/watchguardlive/savepng.php", "POST", "file=" + ofName + "&content=" + dataURL);
+if (req.status == 200) {
+// return the full path of the saved file
+//alert('200');
+fName = req.responseText;
+$('#pgAddBookImagePreview').attr('src', dataURL);
+//show a toast message that the file has been uploaded
+alert('file has been uploaded');
+//toastr.success(ofName + ' file uploaded.', 'Library');
+} else {
+// return a blank file name
+fName = '';
+//show a toast message that the file has not been uploaded
+alert('show a toast message that the file has not been uploaded');
+//toastr.error(ofName + ' file NOT uploaded.', 'Library');
 }
+//set the file name to store later
+//$('#pgAddBookBookImage').data('file', fName);
+};
+// start reading the file contents
+reader.readAsDataURL(fName);
 
-return false;
-},
-error: function (request,error) {
-   
-console.log(request);
-console.log(error);  
-
-alert('Network error has occurred please try again!');
-}
+/*$.mobile.loading("hide");*/
 });
 
-});
-*/
+function Ajax(URL, method, data, callback) {
+  if (typeof(method) !== 'object') {
+    var settings = new Object;
+    if(!method || method === null || typeof(method) === 'undefined') method = "GET";
+    settings.type = method.toUpperCase()
+    if(!data || data === null || typeof(data) === 'undefined') data = "";
+    settings.data = data;
+    if (!callback) {
+      settings.async = false;
+      } else {
+      settings.success = callback;
+    settings.fail = callback}
+  }
+  return $.ajax(URL, settings);
+}
 
 function onSuccess(data, status)
 {
