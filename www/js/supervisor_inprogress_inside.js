@@ -177,8 +177,10 @@ username=regionArray_array.username;
 //alert(username);
 $("#userlistinso").text(username);
 
-
-//alert(reject_repa);
+var subco_status=user_obja.subco_status;
+//alert(subco_status+'subco_status');
+if(subco_status == 'reject' ){
+//alert('reject');
 if(reject_repa !== null){
 for(a=0;a<coordinator_final_comment_array.length;a++){
 
@@ -197,12 +199,12 @@ var oneempqa=reject_repaa.comment;
 
   }
 }
-
-if(reject_repa !== null){
+}
+/*if(reject_repa !== null){
 
   var verificationid=reject_repa.verification_id;
   var typ=reject_repa.type;
-/*if(verificationid == verification_user_id && qualification_id == typ ){
+if(verificationid == verification_user_id && qualification_id == typ ){
   alert('show');
 
   $('.reportr').show();
@@ -210,11 +212,9 @@ if(reject_repa !== null){
 $('.hhh').html('<img src="images/primary/not.png" alt="" >State Head Rejected Report');
 $('.ppp').text(reject_repa.comment);
 
-}*/
-
-
-
 }
+
+}*/
 
 $('.hhhh').text('Subject Name : '+user_obja.First_Name+' '+user_obja.Last_Name);
 $('.pppp').text('Type : '+user_obja.verification_for);
