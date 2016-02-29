@@ -2,9 +2,8 @@ $(document).on('pageshow', '#primarymessage', function(){
 //alert('updateactivitya 222');
 $('#chatr').empty();
 
-
 $('#intlife').hide();
-$('.uii').hide();
+
 $.mobile.loading("hide");
 /*var status_val_inpro = $('input:radio[name=radio-choice-a]:checked').val();
 alert(status_val_inpro);
@@ -252,10 +251,13 @@ $('#chatr').append(chatr);
 
 //upload a file to server once onchange is detected
 $('#pgAddBookBookImage').on('change', function () {
-/*$.mobile.loading("show", {
+  $('#chatSendButton').hide();
+  $(".ui-icon-loading").show();
+$.mobile.loading("show", {
 text: "Loading file...",
 textVisible: true
-});*/
+});
+
 //check to see if we have a file
 var fName = document.getElementById('pgAddBookBookImage').files[0];
 
@@ -282,30 +284,27 @@ fName = req.responseText;
 //alert(fName+'fname');
 $('#pgAddBookImagePreview').attr('src', dataURL);
 //show a toast message that the file has been uploaded
-$('.uii').show();
-$(".ui-icon-loading").show();
+/*$(".ui-icon-loading").show();
 $.mobile.loading("show", {
 text: "Loading file...",
 textVisible: true
-});
-$('#chatSendButton').hide();
+});*/
+
 alert('file has been uploaded');
-$('#chatSendButton').show();
+
 //toastr.success(ofName + ' file uploaded.', 'Library');
 }else {
 // return a blank file name
 fName = req.responseText;
-$('.uii').show();
-$(".ui-icon-loading").show();
+/*$(".ui-icon-loading").show();
 
 $.mobile.loading("show", {
 text: "Loading file...",
 textVisible: true
-});
-$('#chatSendButton').hide();
+});*/
+
 alert('file has been uploaded');
-$('#chatSendButton').show();
-$('.uii').hide();
+
 //alert(fName+'fname not been upload');
 //show a toast message that the file has not been uploaded
 //alert('show a toast message that the file has not been uploaded');
@@ -317,6 +316,7 @@ $('.uii').hide();
 $('#pgAddBookBookImage').data('file', fName);
 $(".ui-icon-loading").hide();
 $.mobile.loading("hide");
+$('#chatSendButton').show();
 };
 // start reading the file contents
 reader.readAsDataURL(fName);
