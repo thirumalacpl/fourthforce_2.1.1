@@ -281,6 +281,12 @@ var req = Ajax("http://staging.eimpressive.com/watchguardlive/savepng.php", "POS
 if (req.status == 200) {
 // return the full path of the saved file
 //alert('200');
+  $('.uii').show();
+  $(".ui-icon-loading").show();
+$.mobile.loading("show", {
+text: "Loading file...",
+textVisible: true
+});
 fName = req.responseText;
 //alert(fName+'fname');
 $('#pgAddBookImagePreview').attr('src', dataURL);
@@ -297,6 +303,12 @@ textVisible: true
 }else {
 // return a blank file name
 fName = req.responseText;
+  $('.uii').show();
+  $(".ui-icon-loading").show();
+$.mobile.loading("show", {
+text: "Loading file...",
+textVisible: true
+});
 //alert(fName+'fname not uploaded');
 /*$(".ui-icon-loading").show();
 
