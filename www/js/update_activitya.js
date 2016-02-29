@@ -289,7 +289,7 @@ text: "Loading file...",
 textVisible: true
 });
 $('#chatSendButton').hide();
-//alert('file has been uploaded');
+alert('file has been uploaded');
 $('#chatSendButton').show();
 //toastr.success(ofName + ' file uploaded.', 'Library');
 }else {
@@ -303,7 +303,7 @@ text: "Loading file...",
 textVisible: true
 });
 $('#chatSendButton').hide();
-//alert('file has been uploaded');
+alert('file has been uploaded');
 $('#chatSendButton').show();
 $('.uii').hide();
 //alert(fName+'fname not been upload');
