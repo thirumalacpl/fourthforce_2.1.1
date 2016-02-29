@@ -4,6 +4,7 @@ $('#chatr').empty();
 
 $('#intlife').hide();
 
+$.mobile.loading("hide");
 /*var status_val_inpro = $('input:radio[name=radio-choice-a]:checked').val();
 alert(status_val_inpro);
 
@@ -262,7 +263,7 @@ if (typeof (fName) === 'undefined') fName = '';
 //get the file name
 var ofName = fName.name;
 //get the file extension
-alert(ofName+'fname');
+//alert(ofName+'fname');
 //var ofExt = Mid(ofName, InStrRev(ofName, '.'));
 // open a file reader to upload the file to the server
 var reader = new FileReader();
@@ -275,32 +276,43 @@ var req = Ajax("http://staging.eimpressive.com/watchguardlive/savepng.php", "POS
 
 if (req.status == 200) {
 // return the full path of the saved file
-alert('200');
+//alert('200');
 fName = req.responseText;
-
+//alert(fName+'fname');
 $('#pgAddBookImagePreview').attr('src', dataURL);
 //show a toast message that the file has been uploaded
+$(".ui-icon-loading").show();
 $.mobile.loading("show", {
 text: "Loading file...",
 textVisible: true
 });
+$('#chatSendButton').hide();
 alert('file has been uploaded');
+$('#chatSendButton').show();
 //toastr.success(ofName + ' file uploaded.', 'Library');
-$.mobile.loading("hide");
 }else {
 // return a blank file name
 fName = req.responseText;
+$(".ui-icon-loading").show();
+
 $.mobile.loading("show", {
 text: "Loading file...",
 textVisible: true
 });
+$('#chatSendButton').hide();
+alert('file has been uploaded');
+$('#chatSendButton').show();
+//alert(fName+'fname not been upload');
 //show a toast message that the file has not been uploaded
-alert('show a toast message that the file has not been uploaded');
+//alert('show a toast message that the file has not been uploaded');
 //toastr.error(ofName + ' file NOT uploaded.', 'Library');
-$.mobile.loading("hide");
+
 }
+
 //set the file name to store later
 $('#pgAddBookBookImage').data('file', fName);
+$(".ui-icon-loading").hide();
+$.mobile.loading("hide");
 };
 // start reading the file contents
 reader.readAsDataURL(fName);

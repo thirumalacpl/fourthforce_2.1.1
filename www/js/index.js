@@ -49,6 +49,7 @@ success: function (result) {
     alert('username or password entered is invalid');
     $.mobile.changePage($('#pageone'), { transition: "none", changeHash: true, reverse: false });
     return false; 
+      $(".ui-icon-loading").hide();
 }
     if(pas != ''){
       //alert(pas+'sup');

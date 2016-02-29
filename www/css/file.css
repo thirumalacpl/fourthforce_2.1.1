@@ -2186,3 +2186,8 @@ font-size: 20px !important;
 	font-size: 20px !important;
 }
 }
+
+.ui-loading .ui-loader {
+    display: block;
+    background-color: #54566B !important;
+}
