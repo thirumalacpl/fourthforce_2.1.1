@@ -3,7 +3,7 @@ $(document).on('pageshow', '#primarymessage', function(){
 $('#chatr').empty();
 
 $('#intlife').hide();
-
+$('.uii').hide();
 $.mobile.loading("hide");
 /*var status_val_inpro = $('input:radio[name=radio-choice-a]:checked').val();
 alert(status_val_inpro);
@@ -252,6 +252,7 @@ $('#chatr').append(chatr);
 //upload a file to server once onchange is detected
 $('#pgAddBookBookImage').on('change', function () {
   $('#chatSendButton').hide();
+  $('.uii').show();
   $(".ui-icon-loading").show();
 $.mobile.loading("show", {
 text: "Loading file...",
@@ -317,7 +318,9 @@ alert('file has been uploaded');
 $('#pgAddBookBookImage').data('file', fName);
 $(".ui-icon-loading").hide();
 $.mobile.loading("hide");
+$('.uii').hide();
 $('#chatSendButton').show();
+
 };
 // start reading the file contents
 reader.readAsDataURL(fName);
