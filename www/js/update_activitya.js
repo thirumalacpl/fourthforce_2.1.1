@@ -2,8 +2,9 @@ $(document).on('pageshow', '#primarymessage', function(){
 //alert('updateactivitya 222');
 $('#chatr').empty();
 
-$('#intlife').hide();
 
+$('#intlife').hide();
+$('.uii').hide();
 $.mobile.loading("hide");
 /*var status_val_inpro = $('input:radio[name=radio-choice-a]:checked').val();
 alert(status_val_inpro);
@@ -281,18 +282,20 @@ fName = req.responseText;
 //alert(fName+'fname');
 $('#pgAddBookImagePreview').attr('src', dataURL);
 //show a toast message that the file has been uploaded
+$('.uii').show();
 $(".ui-icon-loading").show();
 $.mobile.loading("show", {
 text: "Loading file...",
 textVisible: true
 });
 $('#chatSendButton').hide();
-alert('file has been uploaded');
+//alert('file has been uploaded');
 $('#chatSendButton').show();
 //toastr.success(ofName + ' file uploaded.', 'Library');
 }else {
 // return a blank file name
 fName = req.responseText;
+$('.uii').show();
 $(".ui-icon-loading").show();
 
 $.mobile.loading("show", {
@@ -300,8 +303,9 @@ text: "Loading file...",
 textVisible: true
 });
 $('#chatSendButton').hide();
-alert('file has been uploaded');
+//alert('file has been uploaded');
 $('#chatSendButton').show();
+$('.uii').hide();
 //alert(fName+'fname not been upload');
 //show a toast message that the file has not been uploaded
 //alert('show a toast message that the file has not been uploaded');
