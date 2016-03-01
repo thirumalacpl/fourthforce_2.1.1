@@ -5304,7 +5304,36 @@ $(document).on('pageshow', '#pagedesign_not_veri', function(){
  <!--supervisor_inprogress_list_start -->
  <div data-role="page" id="supervisor_inprogress_list">
      <script type="text/javascript" src="js/supervisor_inprogress_list.js"></script>
+<script src="js/jquery.fileuploadmulti.min.js"></script>
+<script>
 
+$(document).ready(function()
+{
+
+var settings = {
+  url: "http://staging.eimpressive.com/watch_app/wat_img/upload.php",
+  method: "POST",
+  allowedTypes:"jpg,png,gif,doc,pdf,zip",
+  fileName: "myfile",
+  multiple: true,
+  onSuccess:function(files,data,xhr)
+  {
+    $("#status").html("<font color='green'>Upload is success</font>");
+    
+  },
+    afterUploadAll:function()
+    {
+        alert("all images uploaded!!");
+    },
+  onError: function(files,status,errMsg)
+  {   
+    $("#status").html("<font color='red'>Upload is Failed</font>");
+  }
+}
+$("#mulitplefileuploader").uploadFile(settings);
+
+});
+</script>
 
      <!--  <nd2-include data-src="examples/fragments/panel.left.html"></nd2-include> -->
 
@@ -5397,6 +5426,10 @@ $(document).on('pageshow', '#pagedesign_not_veri', function(){
 
 </div>
 </div>
+
+<div id="mulitplefileuploader">Upload</div>
+
+<div id="status"></div>
 
  <div class="ui-grid-solo">
 <div class="ui-block-a">
