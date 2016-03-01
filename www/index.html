@@ -5305,39 +5305,7 @@ $(document).on('pageshow', '#pagedesign_not_veri', function(){
  <div data-role="page" id="supervisor_inprogress_list">
      <script type="text/javascript" src="js/supervisor_inprogress_list.js"></script>
 
-<script type="text/javascript">
-  <script type="text/javascript">
-$(document).ready(function() {
-  function sendImage(src) {
-    
-    // Set the image source [library || camera]
-    src = (src == 'library') ? Camera.PictureSourceType.PHOTOLIBRARY : Camera.PictureSourceType.CAMERA;
-    
-    // Aquire the image -> Phonegap API
-    navigator.camera.getPicture(success, fail, {quality: 10, sourceType: src});
-    
-    // Successfully aquired image data -> base64 encoded string of the image file
-    function success(imageData) {
-      var url = 'http://staging.eimpressive.com/watchguardlive/uploada.php';
-      var params = {image: imageData};
-      
-      // send the data
-      $.post(url, params, function(data) {
-        
-        // Display the selected image on send complete
-        $('#image').attr('src', 'data:image/jpeg;base64,' + params['image']);
-        
-      });
-    }
-    
-    function fail(message) { alert(message); }
-  }
-  
-  $('.send-image').click(function () { sendImage($(this).val()); }); 
-});
 
-</script>
-</script>
      <!--  <nd2-include data-src="examples/fragments/panel.left.html"></nd2-include> -->
 
       <div data-role="panel" id="bottomsheet" data-animate="false" data-position='bottom' data-display="overlay">
@@ -5429,8 +5397,6 @@ $(document).ready(function() {
 
 </div>
 </div>
-
-<input type="button" class="send-image" value="camera" /><input type="button" class="send-image" value="library" /><img style="width:60px;height:60px;" id="image" src="" />
 
  <div class="ui-grid-solo">
 <div class="ui-block-a">
@@ -7559,7 +7525,23 @@ $(document).on('pageshow', '#pagedesign_completed', function(){
 
  <div data-role="page" id="primarymessage">
    <script src="js/update_activitya.js"></script>
-      
+<!--       <script type="text/javascript">
+  function imageOnError(img) {
+    img.onerror = '';
+    var stub = $('<div />').css({ 'height': $(img).height(), 'width': $(img).width() })
+        .addClass('stub').html('<p>Sorry, this image is currently not available.</p>');
+    $(img).parent().html(stub);
+    return true;
+}
+</script> -->
+<script type="text/javascript">
+  function imgError(image) {
+    image.onerror = "";
+    image.src = "images/primary/lade.gif";
+    return true;
+}
+</script>
+
      <!--  <nd2-include data-src="examples/fragments/panel.left.html"></nd2-include> -->
 
       <div data-role="panel" id="bottomsheet" data-animate="false" data-position='bottom' data-display="overlay">
@@ -7703,6 +7685,12 @@ $(document).on('pageshow', '#pagedesign_completed', function(){
 <div class="ui-loader ui-corner-all ui-body-a ui-loader-verbose uii"><span class="ui-icon-loading"></span><h1>Wait Image Is Uploading...</h1></div>
 
 <br>
+
+<!-- <div class="container">
+    <img src="http://staging.eimpressive.com/watch_app/fourthforce_2.1.1/www/images/primary/chat-icon.png" width="300" height="100"  onerror="return imageOnError(this);" />
+</div> -->
+
+
 <!--integrity lifestyle 84   85 86 87 88 start-->  
 <div id="intlife">
 <div class="ui-grid-solo" style="padding:0.7em !important;">

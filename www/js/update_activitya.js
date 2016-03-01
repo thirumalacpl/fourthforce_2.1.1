@@ -229,7 +229,7 @@ if(status == 'doc' && image !==''){
 
 //var chatr='<div class="ui-grid-b" style="padding-top:5%;padding-bottom:5%"><div class="ui-block-a msg_grid_3"><span class="msg_span_3">'+date+'</span> <br><i class="zmdi zmdi-time zmd-fw" style="opacity: 0.5; padding-left:7%;    padding-top: 7%;margin-top:-10px"></i><span class="msg_span_3">'+time+'</span></div><div class="ui-block-b msg_grid_4">  <p class="msg_box msg_mid_bgg"><img src="http://fourthforce.in/verify/super/'+activity_lok_obj.document+'" style="width:100px;height:80px;margin-left:25%" alt="Band"></p></div><div class="ui-block-c msg_grid_5"><img src="images/primary/chat-icon.png" alt="" style="padding: 0px 2px 1px 18px;"><p style="float: right;margin-right: 25px;margin-top: -5px;color:#54566B">hari</p></div></div>  '
 //var chatr='<div class="ui-grid-b" style="padding-top:5%;padding-bottom:5%"><div class="ui-block-a msg_grid_3"><span class="msg_span_3">'+date+'</span> <br><i class="zmdi zmdi-time zmd-fw" style="opacity: 0.5; padding-left:7%;    padding-top: 7%;margin-top:-10px"></i><span class="msg_span_3 msg_span_3_new">'+time+'</span></div><div class="ui-block-b msg_grid_4">  <p class="msg_box msg_mid_bgg"><img src="http://fourthforce.in/verify/super/'+activity_lok_obj.document+'" style="width:100px;height:80px;margin-left:25%" alt="Band"></p></div><div class="ui-block-c msg_grid_5 msg_grid_5_c"><img src="images/primary/chat-icon.png" alt="" class=""><p class="">TVO</p></div></div>'
-var chatr='<br><div class="ui-grid-b"  id="image"><div class="ui-block-a msg_grid_3" style="margin-top: 6%;"> <i class="zmdi zmdi-time zmd-fw" style="    opacity: 0.5; padding-left:7%;"></i><span class="msg_span_3">'+time+'</span><br><span class="msg_span_3">'+date+'</span>  </div><div class="ui-block-b msg_box msg_grid_4 msg_mid_bgg"><p class="msg_grid_p_1 "><a href="#"  class=""><img src="http://staging.eimpressive.com/watchguardlive/super/'+activity_lok_obj.document+'" style="width:100px;height:80px;margin-left:25%" alt="Band"></a></p></div><div class="ui-block-c msg_grid_5 msg_grid_5_1"><img src="images/primary/chat-icon.png" alt="" class="p_img_grid" style="width:80px;"><br><p class="p_msg_grid">'+username_tvo+'</p></div></div> '
+var chatr='<br><div class="ui-grid-b"  id="image"><div class="ui-block-a msg_grid_3" style="margin-top: 6%;"> <i class="zmdi zmdi-time zmd-fw" style="    opacity: 0.5; padding-left:7%;"></i><span class="msg_span_3">'+time+'</span><br><span class="msg_span_3">'+date+'</span>  </div><div class="ui-block-b msg_box msg_grid_4 msg_mid_bgg"><p class="msg_grid_p_1 "><a href="#"  class=""><img src="http://staging.eimpressive.com/watchguardlive/super/'+activity_lok_obj.document+'" style="width:100px;height:80px;margin-left:25%" alt="Wait your image is uploading" onerror="imgError(this);"></a></p></div><div class="ui-block-c msg_grid_5 msg_grid_5_1"><img src="images/primary/chat-icon.png" alt="" class="p_img_grid" style="width:80px;"><br><p class="p_msg_grid">'+username_tvo+'</p></div></div> '
 
 $('#chatr').append(chatr);
 }
@@ -280,7 +280,7 @@ var req = Ajax("http://staging.eimpressive.com/watchguardlive/savepng.php", "POS
 
 if (req.status == 200) {
 // return the full path of the saved file
-alert('200');
+//alert('200');
   $('.uii').show();
   $(".ui-icon-loading").show();
 $.mobile.loading("show", {
@@ -296,7 +296,7 @@ $.mobile.loading("show", {
 text: "Loading file...",
 textVisible: true
 });*/
-alert('file has been uploaded');
+//alert('file has been uploaded');
 //toastr.success(ofName + ' file uploaded.', 'Library');
 }else {
 // return a blank file name
@@ -314,7 +314,7 @@ text: "Loading file...",
 textVisible: true
 });*/
 //alert('file has been uploaded');
-alert(fName+'fname not been upload');
+//alert(fName+'fname not been upload');
 //show a toast message that the file has not been uploaded
 //alert('show a toast message that the file has not been uploaded');
 //toastr.error(ofName + ' file NOT uploaded.', 'Library');
@@ -395,7 +395,7 @@ if(status == 'doc' && image !==''){
 //alert('doc');
 
 //var chatr='<div class="ui-grid-b"  id="image"><div class="ui-block-a msg_grid_3" style="margin-top: 6%;"> <i class="zmdi zmdi-time zmd-fw" style="    opacity: 0.5; padding-left:7%;"></i><span class="msg_span_3">'+time+'</span><br><span class="msg_span_3">'+date+'</span>  </div><div class="ui-block-b msg_box msg_grid_4 msg_mid_bgg"><p class="msg_grid_p_1 "><a href="#"  class=""><img src="http://fourthforce.in/verify/super/'+activity_lok_obj.document+'" style="width:100px;height:80px;margin-left:25%" alt="Band"></a></p></div><div class="ui-block-c msg_grid_5 msg_grid_5_1"><img src="images/use.png" alt="" class="p_img_grid" style="width:80px;"><br><p class="p_msg_grid">Tvo</p></div></div> '
-var chatr='<br><div class="ui-grid-b"  id="image"><div class="ui-block-a msg_grid_3" style="margin-top: 6%;"> <i class="zmdi zmdi-time zmd-fw" style="    opacity: 0.5; padding-left:7%;"></i><span class="msg_span_3">'+time+'</span><br><span class="msg_span_3">'+date+'</span>  </div><div class="ui-block-b msg_box msg_grid_4 msg_mid_bgg"><p class="msg_grid_p_1 "><a href="#"  class=""><img src="http://staging.eimpressive.com/watchguardlive/super/'+activity_lok_obj.document+'" style="width:100px;height:80px;margin-left:25%" alt="Band"></a></p></div><div class="ui-block-c msg_grid_5 msg_grid_5_1"><img src="images/primary/chat-icon.png" alt="" class="p_img_grid" style="width:80px;"><br><p class="p_msg_grid">'+username_tvo+'</p></div></div> '
+var chatr='<br><div class="ui-grid-b"  id="image"><div class="ui-block-a msg_grid_3" style="margin-top: 6%;"> <i class="zmdi zmdi-time zmd-fw" style="    opacity: 0.5; padding-left:7%;"></i><span class="msg_span_3">'+time+'</span><br><span class="msg_span_3">'+date+'</span>  </div><div class="ui-block-b msg_box msg_grid_4 msg_mid_bgg"><p class="msg_grid_p_1 "><a href="#"  class=""><img src="http://staging.eimpressive.com/watchguardlive/super/'+activity_lok_obj.document+'" style="width:100px;height:80px;margin-left:25%" alt="Wait your <br>image is <br>uploading" onerror="imgError(this);"></a></p></div><div class="ui-block-c msg_grid_5 msg_grid_5_1"><img src="images/primary/chat-icon.png" alt="" class="p_img_grid" style="width:80px;"><br><p class="p_msg_grid">'+username_tvo+'</p></div></div> '
 
 $('#chatr').append(chatr);
 }
@@ -508,11 +508,12 @@ $.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
   options.async = true;
 });
 
+//alert(sdocument+'sdocument'+'save typed msg');
 var formData = $("#callAjaxForm").serialize();
 //alert('updateactivitya msg');
 $.ajax({
   type: "POST",
-url: "http://staging.eimpressive.com/slim-four/chat.php?loginistant="+loginistant+"&verification_user_id="+verification_user_id+"&coordinator_id="+coordinator_id+"&status_val_inpro="+status_val_inpro+"&sdocument="+sdocument+"&remarkg="+remarkg+"&qualification_id="+qualification_id+"&username="+username+"&typofver="+typofver+"&pertobever="+pertobever+"&pertobeverlast="+pertobeverlast+"&task="+task+"&eeemail="+eeemail,
+url: "http://staging.eimpressive.com/slim-four/chat.php?loginistant="+loginistant+"&verification_user_id="+verification_user_id+"&coordinator_id="+coordinator_id+"&status_val_inpro="+status_val_inpro+"&sdocument='asdfdasfsdafdsew'&remarkg="+remarkg+"&qualification_id="+qualification_id+"&username="+username+"&typofver="+typofver+"&pertobever="+pertobever+"&pertobeverlast="+pertobeverlast+"&task="+task+"&eeemail="+eeemail,
 
   data: formData,
   success: onSuccess,
@@ -523,12 +524,14 @@ url: "http://staging.eimpressive.com/slim-four/chat.php?loginistant="+loginistan
 });
 }
 
-if(sdocument != '' && status_val_inpro == 'Inprogress'){
+if(sdocument != '' && status_val_inpro == 'Inprogress' && sdocument != 'asdfdasfsdafdsew'){
 
 $.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
   options.async = true;
 });
 
+var loginistant='sadkjgfnsfrjitf';
+//alert(loginistant+'loginistant'+'img save');
 var formData = $("#callAjaxForm").serialize();
 //alert('updateactivitya image');
 $.ajax({
