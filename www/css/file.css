@@ -1090,7 +1090,7 @@ li {
       div.upload {
      width: 30px !important;
     height: 30px !important;
-    background: url(../images/primary/check-in.png);
+    background: url(../images/primary/uppc.png);
     /* background-color: red; */
     background-size: 100%;
     background-repeat: no-repeat;
@@ -2118,6 +2118,10 @@ font-size: 20px !important;
 #filterBasic-inputlistnot{
 	font-size: 20px !important;
 }
+.imgsize{
+        width: 150px;
+    height: 150px;
+}
 }
 
 @media screen and (min-width: 481px) and (max-width: 1024px) {
@@ -2184,6 +2188,11 @@ font-size: 20px !important;
 }
 #filterBasic-inputlistnot{
 	font-size: 20px !important;
+}
+
+.imgsize{
+        width: 400px;
+    height: 300px;
 }
 }
 
