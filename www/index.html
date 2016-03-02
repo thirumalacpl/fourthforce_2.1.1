@@ -5304,7 +5304,7 @@ $(document).on('pageshow', '#pagedesign_not_veri', function(){
  <!--supervisor_inprogress_list_start -->
  <div data-role="page" id="supervisor_inprogress_list">
      <script type="text/javascript" src="js/supervisor_inprogress_list.js"></script>
-<script src="js/jquery.fileuploadmulti.min.js"></script>
+<!--<script src="js/jquery.fileuploadmulti.min.js"></script>
  <link href="css/uploadfilemulti.css" rel="stylesheet">
 <script>
 
@@ -5317,6 +5317,7 @@ var settings = {
   allowedTypes:"jpg,png,gif,doc,pdf,zip",
   fileName: "myfile",
   multiple: true,
+  
   onSuccess:function(files,data,xhr)
   {
     $("#status").html("<font color='green'>Upload is success</font>");
@@ -5334,7 +5335,7 @@ var settings = {
 $("#mulitplefileuploader").uploadFile(settings);
 
 });
-</script>
+</script>-->
 
      <!--  <nd2-include data-src="examples/fragments/panel.left.html"></nd2-include> -->
 
@@ -5428,9 +5429,9 @@ $("#mulitplefileuploader").uploadFile(settings);
 </div>
 </div>
 
-<div id="mulitplefileuploader">Upload</div>
+<!-- <div id="mulitplefileuploader">Upload</div>
 
-<div id="status"></div>
+<div id="status"></div> -->
 
  <div class="ui-grid-solo">
 <div class="ui-block-a">
@@ -7575,7 +7576,45 @@ $(document).on('pageshow', '#pagedesign_completed', function(){
     return true;
 }
 </script>
+<script src="js/jquery.fileuploadmulti.min.js"></script>
+ <link href="css/uploadfilemulti.css" rel="stylesheet">
+<!--<script>
 
+$(document).ready(function()
+{
+
+var settings = {
+
+  url: "http://staging.eimpressive.com/watch_app/wat_img/upload.php",
+  method: "POST",
+  allowedTypes:"jpg,png,gif,doc",
+  /*allowedTypes:"jpg,png,gif,doc,pdf,zip",*/
+  fileName: "myfile",
+  multiple: true,
+  
+  onSuccess:function(files,data,xhr)
+  {
+    alert('success');
+    sessionStorage.setItem("ret",JSON.stringify(data));
+    ret =  JSON.parse(sessionStorage.getItem("ret"));
+    var res = ret.slice(143,159);
+    alert(res+'res');
+    $("#status").html("<font color='green'>Upload is success</font>");
+    
+  },
+    afterUploadAll:function()
+    {
+        alert("all images uploaded!!");
+    },
+  onError: function(files,status,errMsg)
+  {   
+    $("#status").html("<font color='red'>Upload is Failed</font>");
+  }
+}
+$("#mulitplefileuploader").uploadFile(settings);
+
+});
+</script>-->
      <!--  <nd2-include data-src="examples/fragments/panel.left.html"></nd2-include> -->
 
       <div data-role="panel" id="bottomsheet" data-animate="false" data-position='bottom' data-display="overlay">
@@ -7662,11 +7701,15 @@ $(document).on('pageshow', '#pagedesign_completed', function(){
     <div class="upload_box">
  <div class="ui-grid-a">
  <div class="ui-block-a" style="width:15%;">
-<div class="upload">
+<div class="upload" id="mulitplefileuploader">
       
-<div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset ui-input-has-clear">
+      <!-- <div id="mulitplefileuploader">Upload</div> -->
+
+<!-- <div id="status"></div> -->
+
+<!-- <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset ui-input-has-clear">
 <input  required name="pgAddBookBookImage" title="Enter book image here." type="file" id="pgAddBookBookImage" placeholder="Enter book image here." autocomplete="off" data-clear-btn="true" accept="image/*">
-</div>
+</div> -->
 
     </div>
     </div>

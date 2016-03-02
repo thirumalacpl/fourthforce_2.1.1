@@ -2,6 +2,9 @@ $(document).on('pageshow', '#primarymessage', function(){
 //alert('updateactivitya 222');
 $('#chatr').empty();
 
+$('.upload-statusbar').remove();
+$('.ajax-upload-dragdrop').remove();
+
 $('#intlife').hide();
 $('.uii').hide();
 $.mobile.loading("hide");
@@ -419,9 +422,70 @@ function onError(data, status)
 alert("Network Error");
 }        
 
+var settings = {
+
+  url: "http://staging.eimpressive.com/watchguardlive/uploadas.php",
+  method: "POST",
+  allowedTypes:"jpg,png,gif,doc",
+  /*allowedTypes:"jpg,png,gif,doc,pdf,zip",*/
+  fileName: "myfile",
+  multiple: true,
+  
+  onSuccess:function(files,data,xhr)
+  {
+    //alert('success');
+    sessionStorage.setItem("ret",JSON.stringify(data));
+    ret =  JSON.parse(sessionStorage.getItem("ret"));
+    var res = ret.slice(140,300);
+   // alert(res+'res');
+   //alert(verification_user_id+'verification_user_id');
+      //alert(coordinator_id+'coordinator_id');
+         //alert(res+'res');
+          // alert(qualification_id+'qualification_id');
+
+$.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
+  options.async = true;
+});
+
+var formData = $("#callAjaxForm").serialize();
+
+$.ajax({
+  type: "POST",
+url: "http://staging.eimpressive.com/slim-four/sdoc.php?verification_user_id="+verification_user_id+"&coordinator_id="+coordinator_id+"&res="+res+"&qualification_id="+qualification_id,
+
+  data: formData,
+  success: onSuccess,
+  async: 'true',
+  crossDomain: true,
+  dataType: 'json',
+  error: onError
+});
+
+    $("#status").html("<font color='green'>Upload is success</font>");
+    
+  },
+    afterUploadAll:function()
+    {
+       // alert("all images uploaded!!");
+    },
+  onError: function(files,status,errMsg)
+  {   
+    $("#status").html("<font color='red'>Upload is Failed</font>");
+  }
+}
+$("#mulitplefileuploader").uploadFile(settings);
+
+
+    
+
 $(document).off('click', '#chatSendButton').on('click', '#chatSendButton', function() { 
 //alert("but pressed");
+/*  var $element = $('.upload-filename').html();
+    alert($element +'element');*/
 
+/*$('.upload').empty();   */
+
+/*var x = document.getElementById("myFile").value;*/
 
 var remarkg=document.getElementById('remarkg').value;
 
@@ -433,7 +497,10 @@ var status_val_inpro = $('input:radio[name=radio-choice-a]:checked').val();
 //var status_val_inpro='Inprogress';
 //alert(status_val_inpro);
 var sdocument=$('input[type=file]').val().split('\\').pop();
-//alert(sdocument+' submit');
+
+
+
+alert(sdocument+' submit');
 
 var inte=document.getElementById('inte').value;
 //alert(inte+'inte 1');
@@ -545,6 +612,8 @@ url: "http://staging.eimpressive.com/slim-four/chat.php?loginistant="+loginistan
   dataType: 'json',
   error: onError
 });
+
+
 }
 
 if(status_val_inpro == 'Inprogress'){
