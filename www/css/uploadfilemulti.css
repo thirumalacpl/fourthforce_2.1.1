@@ -1,4 +1,4 @@
-.upload-statusbar {
+/*.upload-statusbar {
 border: 1px solid #0ba1b5;
 margin-top: 10px;
 width: 420px;
@@ -8,7 +8,7 @@ margin: 5px;
 -webkit-border-radius: 4px;
 border-radius: 4px;
 padding: 5px 5px 5px 5px
-}
+}*/
 .upload-filename {
 width: 100%;
 height: auto;
@@ -76,7 +76,7 @@ text-shadow: 0 1px 0 #5b8a3c;
 vertical-align: top;
 margin-right:5px;
 }
-.upload {
+/*.upload {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 16px;
    font-weight: bold;
@@ -104,16 +104,16 @@ margin-right:5px;
   -webkit-box-shadow: 0 2px 0 0 #13648d;
   box-shadow: 0 2px 0 0 #13648d; 
   vertical-align:middle;  
-  }
+  }*/
   
-.upload:hover {
+/*.upload:hover {
       background: #28759D;
       -moz-box-shadow: 0 2px 0 0 #15719f;
       -webkit-box-shadow: 0 2px 0 0 #15719f;
       box-shadow: 0 2px 0 0 #15719f;
 }
-
-.ajax-upload-dragdrop
+*/
+/*.ajax-upload-dragdrop
 {
 
 	border:2px solid #000000;
@@ -122,4 +122,52 @@ margin-right:5px;
 	text-align:left;
 	vertical-align:middle;
 	padding:10px 10px 0px 10px;
+}*/
+
+@media screen and (min-width: 250px) and (max-width: 480px) {
+.ajax-upload-dragdrop
+{
+
+  /*border:2px solid #000000;*/
+  width:420px;
+  color: #DADCE3;
+  text-align:left;
+  vertical-align:middle;
+  padding:10px 10px 0px 10px;
 }
+.upload-statusbar {
+/*border: 1px solid #0ba1b5;*/
+margin-top: 10px;
+width: 420px;
+margin-right: 10px;
+margin: 5px;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+padding: 5px 5px 5px 5px
+}
+  }
+
+  @media screen and (min-width: 481px) and (max-width: 1200px) {
+.ajax-upload-dragdrop
+{
+
+  /*border:2px solid #000000;*/
+  width:420px;
+  color: #DADCE3;
+  text-align:left;
+  vertical-align:middle;
+  padding:10px 10px 0px 10px;
+}
+.upload-statusbar {
+/*border: 1px solid #0ba1b5;*/
+margin-top: 10px;
+width: 420px;
+margin-right: 10px;
+margin: 5px;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+padding: 5px 5px 5px 5px
+}
+  }

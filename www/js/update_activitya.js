@@ -356,7 +356,7 @@ function onSuccess(data, status)
 {
   //alert(data);
 
-  var sdocument=$('input[type=file]').val('');
+  //var sdocument=$('input[type=file]').val('');
   //alert(sdocument);
   sessionStorage.setItem("supervisor_activity_log_array",JSON.stringify(data));
 
@@ -516,7 +516,7 @@ var hab_rat=document.getElementById('hab_rat').value;
 //alert(hab_rat+'hab_rat 3 b');
 
 
-if(loginistant == '' && sdocument == '' ){
+if(loginistant == '' ){
 if(remarkg != ''  && status_val_inpro != 'Inprogress'){
 
 //alert(hab_rat+'hab_rat'+qualification_id);
@@ -528,7 +528,7 @@ var formData = $("#callAjaxForm").serialize();
 //alert('remarkg not empty');
 $.ajax({
   type: "POST",
-  url: "http://staging.eimpressive.com/slim-four/chat.php?loginistant="+loginistant+"&verification_user_id="+verification_user_id+"&coordinator_id="+coordinator_id+"&status_val_inpro="+status_val_inpro+"&sdocument="+sdocument+"&remarkg="+remarkg+"&qualification_id="+qualification_id+"&username="+username+"&typofver="+typofver+"&pertobever="+pertobever+"&pertobeverlast="+pertobeverlast+"&task="+task+"&eeemail="+eeemail,
+  url: "http://staging.eimpressive.com/slim-four/chat.php?loginistant="+loginistant+"&verification_user_id="+verification_user_id+"&coordinator_id="+coordinator_id+"&status_val_inpro="+status_val_inpro+"&remarkg="+remarkg+"&qualification_id="+qualification_id+"&username="+username+"&typofver="+typofver+"&pertobever="+pertobever+"&pertobeverlast="+pertobeverlast+"&task="+task+"&eeemail="+eeemail,
 
   data: formData,
   success: onSuccess,
@@ -542,7 +542,7 @@ $.ajax({
 }
 }
 
-if(loginistant == '' && sdocument == '' ){
+if(loginistant == ''  ){
   if(qualification_id == '84' || qualification_id == '85' || qualification_id == '86' || qualification_id == '87' || qualification_id == '88' ){
 if(status_val_inpro != 'Inprogress' && inte != 'Select Reference' && inte_rat != 'Select Rating' && beh !='Select Reference' && beh_rat != 'Select Rating' && hab !='Select Reference' && hab_rat != 'Select Rating'){
 
@@ -580,7 +580,7 @@ var formData = $("#callAjaxForm").serialize();
 //alert('updateactivitya msg');
 $.ajax({
   type: "POST",
-url: "http://staging.eimpressive.com/slim-four/chat.php?loginistant="+loginistant+"&verification_user_id="+verification_user_id+"&coordinator_id="+coordinator_id+"&status_val_inpro="+status_val_inpro+"&sdocument='asdfdasfsdafdsew'&remarkg="+remarkg+"&qualification_id="+qualification_id+"&username="+username+"&typofver="+typofver+"&pertobever="+pertobever+"&pertobeverlast="+pertobeverlast+"&task="+task+"&eeemail="+eeemail,
+url: "http://staging.eimpressive.com/slim-four/chat.php?loginistant="+loginistant+"&verification_user_id="+verification_user_id+"&coordinator_id="+coordinator_id+"&status_val_inpro="+status_val_inpro+"&remarkg="+remarkg+"&qualification_id="+qualification_id+"&username="+username+"&typofver="+typofver+"&pertobever="+pertobever+"&pertobeverlast="+pertobeverlast+"&task="+task+"&eeemail="+eeemail,
 
   data: formData,
   success: onSuccess,
@@ -623,7 +623,7 @@ return false;
 }
 
 if(remarkg != ''  && status_val_inpro != 'Inprogress' ){
-
+//alert('dads');
   document.getElementById('messageText').value = "";
 document.getElementById('remarkg').value = "";
   //alert(region_num);
