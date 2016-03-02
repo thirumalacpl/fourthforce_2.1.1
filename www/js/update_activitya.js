@@ -496,11 +496,11 @@ var loginistant=document.getElementById('messageText').value;
 var status_val_inpro = $('input:radio[name=radio-choice-a]:checked').val();
 //var status_val_inpro='Inprogress';
 //alert(status_val_inpro);
-var sdocument=$('input[type=file]').val().split('\\').pop();
+//var sdocument=$('input[type=file]').val().split('\\').pop();
 
 
 
-alert(sdocument+' submit');
+//alert(sdocument+' submit');
 
 var inte=document.getElementById('inte').value;
 //alert(inte+'inte 1');
@@ -591,7 +591,7 @@ url: "http://staging.eimpressive.com/slim-four/chat.php?loginistant="+loginistan
 });
 }
 
-if(sdocument != '' && status_val_inpro == 'Inprogress' && sdocument != 'asdfdasfsdafdsew'){
+/*if(sdocument != '' && status_val_inpro == 'Inprogress' && sdocument != 'asdfdasfsdafdsew'){
 
 $.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
   options.async = true;
@@ -613,8 +613,7 @@ url: "http://staging.eimpressive.com/slim-four/chat.php?loginistant="+loginistan
   error: onError
 });
 
-
-}
+}*/
 
 if(status_val_inpro == 'Inprogress'){
   document.getElementById('messageText').value = "";
